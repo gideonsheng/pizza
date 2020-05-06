@@ -1,0 +1,23 @@
+{% extends "pizzas/base.html" %}
+
+{% load bootstrap4 %}
+
+{% block page_header %}
+    <li><h1>
+        <a href="{% url 'pizzas:pizza' pizza.id %}">{{ pizza }}</a>
+    </h1></li>
+{% endblock page_header %}
+
+{% block content %}
+    <h3>Comments:</h3>
+
+    <form method="post" action="{% url 'pizzas:New_Comment' pizza.id %}" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+    
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">Add comment</button>
+        {% endbuttons %}
+    </form>
+
+{% endblock content %}
