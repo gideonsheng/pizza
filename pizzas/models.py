@@ -12,11 +12,23 @@ class Pizza(models.Model):
     
 class Topping(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-    name = models.TextField()
+    text = models.CharField(max_length=200)
     date_added = models.DateTimeField(auto_now_add=True)
     
     class Meta:
-        verbose_name_plural = "pizzas"
+        verbose_name_plural = "Toppings"
+
+    def __str__(self):
+        return f"{self.text[:50]}..."
+    
+
+class Comment(models.Model):
+    topic = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name_plural = "Comments"
 
     def __str__(self):
         return f"{self.text[:50]}..."
