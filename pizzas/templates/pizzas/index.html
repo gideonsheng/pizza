@@ -1,12 +1,17 @@
 {% extends "pizzas/base.html" %}
-
+{% load static %}
 {% block page_header %}
-<div class="jumbotron">
+<div class="jumbotron" >
     <h1 class="display-3">Looking your pizza.</h1>
-    <p>pizza Talks : Let's Talk about your pizza today!
-                                                         By SSF</p>
     
+    <p class="lead"> Let's have some pizza today!
+                                                         By SSF</p>
+     
+    <image class="img-fluid" src=" {% static 'mysite\images\pizza.jpg' %}"> 
+
 </div>
+
+
 
 {% endblock page_header %}
 
