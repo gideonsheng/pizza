@@ -6,9 +6,9 @@
 
 {% block content %}
 
-    {% for Topping in Toppings %}
-    <div class="card mb-3"> 
-        {{ Topping.name|linebreaks }}
+    {% for topping in toppings %}
+    <div class="card mb-3">  
+        {{ topping.name|linebreaks }}
     </div>
     {% empty %}
     There are no toppings for this pizza yet.
@@ -16,23 +16,23 @@
 
     <h3>Comments:</h3>
 
-    {% for Comment in Comments %}
+    {% for comment in comments %}
     <div class="card mb-3">
-        {{ Comment.text|linebreaks }}
+        {{ comment.text|linebreaks }}
     </div>
     {% empty %}
     There are no comments for this pizza yet.
     {% endfor %}
 
     <p>
-        <a href="{% url 'pizzas:New_Comment' pizza.id %}">Add new comment</a>
+        <a href="{% url 'pizzas:new_comment' pizza.id %}">Add new comment</a>
     </p>
 
 {% endblock content %}
 
 
 <!-- 
-    <p>Pizza: {{ pizza }}</p>
+    <p>pizza: {{ pizza }}</p>
     <ul>
         {% for topping in toppings %}
         <li>

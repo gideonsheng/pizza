@@ -7,16 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('pizzas', views.pizzas, name='pizzas'),
     path('pizzas/<int:pizza_id>/', views.pizza, name='pizza'),
-    path('New_Comment/<int:pizza_id>/', views.new_comment, name='New_Comment'),
-    path('Edit_Comment/<int:Comment_id>/',views.edit_entry,name='Edit_Comment'),
+    path('new_comment/<int:pizza_id>/', views.new_comment, name='new_comment'),
+    path('',include('django.contrib.auth.urls')),
 ]
 
-#urlpatterns = [
-    #path('',views.index,name='index'),
-    #path('topics',views.topics,name='topics'),
-    #path('topics/<int:topic_id>/',views.topic,name='topic'),
-    #path('new_topic/',views.new_topic,name='new_topic'),
-    #path('new_entry/<int:topic_id>/',views.new_entry,name='new_entry'),
-    #path('edit_entry/<int:entry_id>/',views.edit_entry,name='edit_entry'),
-    #path('',include('django.contrib.auth.urls')),
-#]
